@@ -1,0 +1,66 @@
+h1::after {
+  content: attr(data-name);
+}
+.specify-selector {
+  display: flex;
+}
+.specify-selector + .specify-selector {
+  margin-top: 20px;
+}
+.specify-selector .list {
+  border: 1px solid #f66;
+  width: 200px;
+  line-height: 2;
+  font-weight: bold;
+  font-size: 20px;
+  color: #f66;
+}
+.specify-selector .list + .list {
+  margin-left: 20px;
+}
+.specify-selector .list li {
+  padding: 0 10px;
+}
+.specify-selector .list .next {
+  background-color: #66f;
+  color: #fff;
+}
+.specify-selector .list .next + li {
+  background-color: #f90;
+  color: #fff;
+}
+.specify-selector .list .next-all {
+  background-color: #66f;
+  color: #fff;
+}
+.specify-selector .list .next-all ~ li {
+  background-color: #09f;
+  color: #fff;
+}
+.specify-selector .list .next-filter {
+  background-color: #66f;
+  color: #fff;
+}
+.specify-selector .list .next-filter ~ .filter {
+  background-color: #09f;
+  color: #fff;
+}
+.specify-selector .button + .button {
+  margin-left: 20px;
+}
+.specify-selector .button label {
+  display: block;
+  padding: 0 10px;
+  height: 40px;
+  background-color: #3c9;
+  cursor: pointer;
+  line-height: 40px;
+  font-size: 16px;
+  color: #fff;
+  transition: all 300ms;
+}
+.specify-selector .button input:checked + label {
+  padding: 0 20px;
+  border-radius: 20px;
+  background-color: #f66;
+}

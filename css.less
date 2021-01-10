@@ -1,0 +1,79 @@
+// 属性函数attr.html
+
+// ::before通过attr()获取<h1 class>的属性值并赋值到content上，::after通过attr()获取<h1 data-name>的属性值并赋值到content上，最终<h1>的innerText是hello玩转CSS的艺术之美。
+h1 {
+    &::before {
+        // content: attr(class);
+    }
+
+    &::after {
+        content: attr(data-name);
+    }
+}
+
+// 选择器.html
+.specify-selector {
+    display: flex;
+    & + .specify-selector {
+        margin-top: 20px;
+    }
+    .list {
+        border: 1px solid #f66;
+        width: 200px;
+        line-height: 2;
+        font-weight: bold;
+        font-size: 20px;
+        color: #f66;
+        & + .list {
+            margin-left: 20px;
+        }
+        li {
+            padding: 0 10px;
+        }
+        .next {
+            background-color: #66f;
+            color: #fff;
+            & + li {
+                background-color: #f90;
+                color: #fff;
+            }
+        }
+        .next-all {
+            background-color: #66f;
+            color: #fff;
+            & ~ li {
+                background-color: #09f;
+                color: #fff;
+            }
+        }
+        .next-filter {
+            background-color: #66f;
+            color: #fff;
+            & ~ .filter {
+                background-color: #09f;
+                color: #fff;
+            }
+        }
+    }
+    .button {
+        & + .button {
+            margin-left: 20px;
+        }
+        label {
+            display: block;
+            padding: 0 10px;
+            height: 40px;
+            background-color: #3c9;
+            cursor: pointer;
+            line-height: 40px;
+            font-size: 16px;
+            color: #fff;
+            transition: all 300ms;
+        }
+        input:checked + label {
+            padding: 0 20px;
+            border-radius: 20px;
+            background-color: #f66;
+        }
+    }
+}
